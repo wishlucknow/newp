@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+
 import numpy as np
 import pymysql
 import tensorflow as tf
@@ -8,7 +8,7 @@ from tensorflow.keras.applications.vgg16 import VGG16, preprocess_input
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.models import Model
 from PIL import Image
-
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 app = Flask(__name__)
 
 # Load VGG16 model without final classification layer
